@@ -24,8 +24,8 @@ def get_input():
     x = data[1::2]
     y = data[2::2]
     points = list(zip(x, y))
-    points_sorted_x = sorted(points, key=lambda p: (p[0], p[1]))
-    points_sorted_y = sorted(points_sorted_x, key=lambda p: (p[1], p[0]))
+    points_sorted_x = sorted(points, key=lambda p: p[0])
+    points_sorted_y = sorted(points, key=lambda p: p[1])
 
     return points_sorted_x, points_sorted_y, n
 
@@ -70,4 +70,3 @@ def distance_recursive(points_sorted_x, points_sorted_y, n):
 if __name__ == '__main__':
     points_x, points_y, n_ = get_input()
     print("{0:.9f}".format(math.sqrt(distance_recursive(points_x, points_y, n_))))
-
